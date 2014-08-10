@@ -51,10 +51,10 @@
 		<div data-role="fieldcontain">
 			<fieldset data-role="controlgroup">
 				<legend>Choose mg/dl or mmol:</legend>
-					<input type="radio" name="radio" id="radio1" value="1" checked />
+					<input type="radio" name="radio" id="radio1" value="radio1" checked />
 					<label for="radio1">mg/dl</label>
 
-					<input type="radio" name="radio" id="radio2" value="2"  />
+					<input type="radio" name="radio" id="radio2" value="radio2"  />
 					<label for="radio2">mmol</label>
 			</fieldset>
 		</div>
@@ -145,6 +145,7 @@
         console.log("opts", JSON.stringify(opts));
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
+		
 		$("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
 		
       });
