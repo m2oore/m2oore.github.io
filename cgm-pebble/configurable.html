@@ -18,7 +18,7 @@
     <div data-role="page" id="main">
       <div data-role="header" class="jqm-header">
         <h1>Configure CGM data source</h1>
-        <tt class="hidden" id="status"></tt>
+        <tt id="status"></tt>
       </div>
 
       <div data-role="content">
@@ -28,11 +28,6 @@
           <label for="endpoint">Data endpoint:</label>
           <input type="text" name="endpoint" id="endpoint" />
         </div>
-		<div data-role="fieldcontain">
-			<label for="t1name">Enter T1 Name:</label>
-			<input type="text" name="t1name" id="t1name" />
-		</div>
-
         <div data-role="collapsible-set">
 
           <div class="azure panel" data-role="collapsible">
@@ -49,6 +44,15 @@
             </div>
           </div>
         </div>
+		<div data-role="fieldcontain">
+			<label for="t1name">Enter T1 Name:</label>
+			<input type="text" name="t1name" id="t1name" />
+		</div>
+		<div data-role="fieldcontain">
+			<label for="t1name">Choose mmol or mg/dl</label>
+			<input type="radio" name="type" value="1">"mg/dl><br>
+			<input type="radio> name="type" valute="2">
+		</div>
 
         <div class="ui-body ui-body-b">
           <fieldset class="ui-grid-a">
