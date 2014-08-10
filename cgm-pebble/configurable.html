@@ -83,7 +83,7 @@
         var options = {
           'endpoint': $("#endpoint").val(),
 		  't1name' : $("#t1name").val(),
-		  'radio-choice' : $('input[name=radio-choice]:checked').val()
+		  'radio' : $('input[name=radio-choice]:checked').val()
         }
         try {
           if (window.localStorage && window.localStorage.setItem) {
@@ -146,7 +146,7 @@
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
 		//var $radios = $('input:radio[name=radio-choice]');
-		//$radios.filter('[value=' + opts.radio-choice + ']').attr('checked',true);
+		//$radios.filter('[value=' + opts.radio + ']').attr('checked',true);
 
       });
     </script>
