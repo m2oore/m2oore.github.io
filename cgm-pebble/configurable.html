@@ -146,7 +146,7 @@
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
 		//$("#" + opts.radio).prop('checked', true);
-		$('input[name=radio][value=' + opts.radio + ']').prop('checked');
+		$('input[name=radio][value=' + opts.radio + ']').prop('checked','checked');
 		console.log("test", opts.radio);
 
       });
