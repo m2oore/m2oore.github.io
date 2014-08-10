@@ -49,9 +49,14 @@
 			<input type="text" name="t1name" id="t1name" />
 		</div>
 		<div data-role="fieldcontain">
-			<label for="t1name">Choose mmol or mg/dl</label>
-			<p><input type="radio" name="sex" value="male">Male</p>
-			<p><input type="radio" name="sex" value="female">Female</p>
+			<fieldset data-role="controlgroup">
+				<legend>Choose mg/dl or mmol:</legend>
+					<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" checked="checked" />
+					<label for="radio-choice-1">mg/dl</label>
+
+					<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"  />
+					<label for="radio-choice-2">mmol</label>
+			</fieldset>
 		</div>
 
         <div class="ui-body ui-body-b">
