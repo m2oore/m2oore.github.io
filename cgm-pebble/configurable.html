@@ -145,8 +145,8 @@
         console.log("opts", JSON.stringify(opts));
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
-		//var $radios = $('input:radio[name=radio-choice]');
-		//$radios.filter('[value=' + opts.radio + ']').attr('checked',true);
+		var $radios = $('input:radio[name=radio-choice]');
+		$radios.filter('[value=' + opts.radio + ']').attr('checked',true);
 
       });
     </script>
