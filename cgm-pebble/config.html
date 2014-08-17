@@ -18,7 +18,8 @@
     <div data-role="page" id="main">
       <div data-role="header" class="jqm-header">
         <h1>Configure CGM data source</h1>
-        <tt class="hidden" id="status"></tt>
+		// class="hidden"
+        <tt id="status"></tt>
       </div>
 
       <div data-role="content">
@@ -89,7 +90,10 @@
         var options = {
           'endpoint': $("#endpoint").val(),
 		  't1name' : $("#t1name").val(),
-		  'radio' : $('input[name=radio]:checked').val()
+		  'radio' : $('input[name=radio]:checked').val(),
+		  'endpoint2': $("#endpoint2").val(),
+		  't1name2' : $("#t1name"2).val(),
+		  'radio2' : $('input[name=radio2]:checked').val()
         }
         try {
           if (window.localStorage && window.localStorage.setItem) {
@@ -144,8 +148,11 @@
         console.log("opts", JSON.stringify(opts));
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
-		
 		$("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
+		
+		$("#endpoint2").val(opts && opts.endpoint2 ? opts.endpoint2 : '');
+		$("#t1name").val(opts && opts.t1name2 ? opts.t1name2 : '');
+		$("input[value='" + opts.radio2 + "']").attr("checked",true).checkboxradio("refresh");
 		
 		
       });
