@@ -21,38 +21,36 @@
         <tt class="hidden" id="status"></tt>
       </div>
 
-      <div data-role="content">
-        <h3>Custom</h3>
-        <p>Custom data URL.</p>
-        <div data-role="fieldcontain">
-          <label for="endpoint">Data endpoint:</label>
-          <input type="text" name="endpoint" id="endpoint" />
-        </div>
-        <div data-role="collapsible-set">
+		<div data-role="content">
+			<h3>Custom</h3>
+			<p>Custom data URL.</p>
+			<div data-role="fieldcontain">
+				<label for="endpoint">Data endpoint:</label>
+				<input type="text" name="endpoint" id="endpoint" />
+			</div>
+        
+			<div data-role="fieldcontain">
+				<label for="t1name">Enter T1 Name:</label>
+				<input type="text" name="t1name" id="t1name" />
+			</div>
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup">
+					<legend>Choose mg/dl or mmol:</legend>
+						<input type="radio" name="radio" id="radio1" value="mgdl" />
+						<label for="radio1">mg/dl</label>
 
-		<div data-role="fieldcontain">
-			<label for="t1name">Enter T1 Name:</label>
-			<input type="text" name="t1name" id="t1name" />
+						<input type="radio" name="radio" id="radio2" value="mmol"  />
+						<label for="radio2">mmol</label>
+				</fieldset>
+			</div>
+
+			<div class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
+					<div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
+				</fieldset>
+			</div>
 		</div>
-		<div data-role="fieldcontain">
-			<fieldset data-role="controlgroup">
-				<legend>Choose mg/dl or mmol:</legend>
-					<input type="radio" name="radio" id="radio1" value="mgdl" />
-					<label for="radio1">mg/dl</label>
-
-					<input type="radio" name="radio" id="radio2" value="mmol"  />
-					<label for="radio2">mmol</label>
-			</fieldset>
-		</div>
-
-        <div class="ui-body ui-body-b">
-          <fieldset class="ui-grid-a">
-              <div class="ui-block-a"><button type="submit" data-theme="d" id="b-cancel">Cancel</button></div>
-              <div class="ui-block-b"><button type="submit" data-theme="a" id="b-submit">Submit</button></div>
-            </fieldset>
-          </div>
-        </div>
-      </div>
     </div>
     <script>
       if (console && console.log && console.log.call) {
@@ -68,8 +66,8 @@
         $('#status').text('prepping save');
         var options = {
           'endpoint': $("#endpoint").val(),
-		  't1name' : $("#t1name").val(),
-		  'radio' : $('input[name=radio]:checked').val()
+	  't1name' : $("#t1name").val(),
+	  'radio' : $('input[name=radio]:checked').val()
         }
         try {
           if (window.localStorage && window.localStorage.setItem) {
