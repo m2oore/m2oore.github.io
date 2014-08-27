@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <!-- <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> -->
     <style type="text/css">
       .hidden {
         display: none;
@@ -122,7 +122,7 @@
         console.log("opts", JSON.stringify(opts));
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 	$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
-	$("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
+	$("input[value='" + opts.radio + "']").attr("checked",true);//.checkboxradio("refresh");
 		
 		
       });
