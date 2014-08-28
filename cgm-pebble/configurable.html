@@ -119,7 +119,9 @@
           if (opts.endpoint == ''){
           	$('#status').text('endpoint is blank');
           }
-          }
+        }else{
+        	$('#status').text('no data');	
+        }
         //} catch (e) {
           //opts.error = e;
           //console.log(e);
