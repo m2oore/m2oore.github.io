@@ -84,31 +84,9 @@
         $('#status').text(['prepped', JSON.stringify(options)].join(' '));
         return options;
       }
-
-      $().ready(function() {
-        if (window.location.hash.indexOf("debug") > -1) {
-          $('#status').removeClass('hidden');
-        }
-        $('#status').text('ready');
-        $('#status').text('setting up events');
-
-        $("#b-cancel").click(function() {
-          console.log("Cancel");
-          $('#status').text('canceling');
-          document.location = "pebblejs://close";
-        });
-
-        $("#b-submit").click(function() {
-          console.log("Submit");
-          $('#status').text('submitting');
-
-          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
-          console.log("Warping to: " + location);
-          $('#status').text('closing');
-          document.location = location;
-          // console.log('saved', window.localStorage.cgmOpts);
-        });
-        $('#status').text('fetching from localStorage');
+      
+      function getOptions() {
+      	$('#status').text('fetching from localStorage');
         var _raw = null;
         var opts = { };
         //try {
@@ -134,6 +112,32 @@
 	$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
 	$("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
         //}
+      }
+
+      $().ready(function() {
+        if (window.location.hash.indexOf("debug") > -1) {
+          $('#status').removeClass('hidden');
+        }
+        $('#status').text('ready');
+        $('#status').text('setting up events');
+
+        $("#b-cancel").click(function() {
+          console.log("Cancel");
+          $('#status').text('canceling');
+          document.location = "pebblejs://close";
+        });
+
+        $("#b-submit").click(function() {
+          console.log("Submit");
+          $('#status').text('submitting');
+
+          var location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(saveOptions()));
+          console.log("Warping to: " + location);
+          $('#status').text('closing');
+          document.location = location;
+          // console.log('saved', window.localStorage.cgmOpts);
+        });
+        
 
       });
     </script>
