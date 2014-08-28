@@ -122,7 +122,7 @@
         }
         $('#status').text(['has opts', JSON.stringify(opts)].join(' '));
         console.log("opts", JSON.stringify(opts));
-        if (opts.endpoint){
+        if (JSON.stringify(opts) != "{}"){
         	$("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 		$("#t1name").val(opts && opts.t1name ? opts.t1name : '');
 		$("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
