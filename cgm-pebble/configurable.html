@@ -111,20 +111,22 @@
         $('#status').text('fetching from localStorage');
         var _raw = null;
         var opts = { };
-        try {
+        //try {
+        if(window.localStorage.cgmOpts){
           _raw = window.localStorage && window.localStorage.cgmOpts
                    ? window.localStorage.cgmOpts : null;
           opts = (_raw && _raw.length && _raw.length > 5 ? JSON.parse(_raw) : { });
-        } catch (e) {
-          opts.error = e;
-          console.log(e);
-          $('#status').text('error', JSON.stringify(e));
-        }
+        //} catch (e) {
+          //opts.error = e;
+          //console.log(e);
+          //$('#status').text('error', JSON.stringify(e));
+        //}
         $('#status').text(['has opts', JSON.stringify(opts)].join(' '));
         console.log("opts", JSON.stringify(opts));
         $("#endpoint").val(opts && opts.endpoint ? opts.endpoint : '');
 	      $("#t1name").val(opts && opts.t1name ? opts.t1name : '');
 	      $("input[value='" + opts.radio + "']").attr("checked",true).checkboxradio("refresh");
+        }
 
       });
     </script>
