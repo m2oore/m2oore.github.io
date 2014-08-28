@@ -116,11 +116,12 @@
           _raw = window.localStorage && window.localStorage.cgmOpts
                    ? window.localStorage.cgmOpts : null;
           opts = (_raw && _raw.length && _raw.length > 5 ? JSON.parse(_raw) : { });
-          if (opts.endpoint == ''){
-          	$('#status').text('endpoint is blank');
-          }
         }else{
-        	$('#status').text('no data');	
+        	$('#status').text('no data');
+        	saveOptions();
+        	_raw = window.localStorage && window.localStorage.cgmOpts
+                   ? window.localStorage.cgmOpts : null;
+          	opts = (_raw && _raw.length && _raw.length > 5 ? JSON.parse(_raw) : { });
         }
         //} catch (e) {
           //opts.error = e;
