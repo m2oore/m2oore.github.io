@@ -172,6 +172,12 @@
 						<option value="1">Low</option>
 						<option value="0">None</option>
 					</select>
+					<label for="vibepattern">Select Vibration Pattern</label>
+					<select name="vibepattern" id="vibepattern">
+						<option value="2">Long</option>
+						<option value="1">Short</option>
+						<option value="0">None</option>
+					</select>
         <p>
 		<div data-role="fieldcontain">
 	  <fieldset data-role="controlgroup" id="Radio_Options" data-type="horizontal">
@@ -232,7 +238,9 @@ if (console && console.log && console.log.call) {
 			'highsnooze' : $("#highsnooze option:selected").val(),
 			'lowvibe' : $("#lowvibe option:selected").val(),
 			'highvibe' : $("#highvibe option:selected").val(),
+			'vibepattern' : $("#vibepattern option:selected").val(),
 			'timeformat' :	$('input[name=TimeRadio]:checked').val()
+			
         }
         try {
           if (window.localStorage && window.localStorage.setItem) {
@@ -265,6 +273,7 @@ if (console && console.log && console.log.call) {
 		$("#highsnooze").val('30').selectmenu("refresh");
 		$("#lowvibe").val('3').selectmenu("refresh");
 		$("#highvibe").val('3').selectmenu("refresh");
+		$("#vibepattern").val('2').selectmenu("refresh");
 		$("input[value='12']").attr("checked",true).checkboxradio("refresh");
 		$("input[value='24']").attr("checked",false).checkboxradio("refresh");
 	  }
@@ -300,6 +309,7 @@ if (console && console.log && console.log.call) {
 			$("#highsnooze").val(opts.highsnooze).selectmenu("refresh");
 			$("#lowvibe").val(opts.lowvibe).selectmenu("refresh");
 			$("#highvibe").val(opts.highvibe).selectmenu("refresh");
+			$("#vibepattern").val(opts.vibepattern).selectmenu("refresh");
 			$("input[value='" + opts.timeformat + "']").attr("checked",true).checkboxradio("refresh");
         }else{
 			console.log("no data");
