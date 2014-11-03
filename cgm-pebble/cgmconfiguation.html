@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,30 +23,39 @@
         <h2>Pebble Settings</h2>
         <tt class="hidden" id="status"></tt>
         </div>
+<div data-role="fieldcontain">
+	  <fieldset data-role="controlgroup" id="Radio_Options" data-type="horizontal">
+		<legend><strong>Choose mg/dl or mmol:</strong></legend>
+						<input name="tipo_cadastro" type="radio" id="mgdl_form"" onchange="onchange_handler(this, 'mgdl');" onClick="clearFunction()" onmouseup="onchange_handler(this, 'mgdl');" value="mgdl_form"/>
+						<label for="mgdl_form">mg/dl</label>
 
-		<div data-role="content">
+						<input type="radio" name="tipo_cadastro" id="mmol_form" value="mmol_form" !important" onClick="myFunction()" onchange="onchange_handler(this, 'mmol');" onmouseup="onchange_handler(this, //'mmol');">
+						<label for="mmol_form">mmol</label>
+	</fieldset>
+<script>
+function myFunction() {
+    document.getElementById("message").innerHTML = "for mmol add ?units=mmol after endpoint";
+}
+</script>
+<script>
+function clearFunction() {
+    document.getElementById("message").innerHTML = "";
+}
+</script>
+	<div data-role="content">
 			<div data-role="fieldcontain">
-			  <label for="endpoint"><strong>Data Endpoint:</strong>&nbsp;<br>
-			    ie: http://yoursite.azurewebsites.net/pebble</label>
+			  <label for="endpoint"><strong>Enter Data Endpoint:</strong>&nbsp;<br>
+			    ie: http://name.azurewebsites.net/pebble</label>
 			  <input type="text" name="endpoint" id="endpoint" />
-		  </div>
-        
-		  <div data-role="fieldcontain">
+		  <div id="message">&nbsp;</div></div>
+
+<div data-role="fieldcontain">
 				<label for="t1name">
 				<strong>Enter T1 Name:</strong>
 				
 		    <input type="text" name="t1name" id="t1name" />
 			</div>
-	<div data-role="fieldcontain">
-	  <fieldset data-role="controlgroup" id="Radio_Options" data-type="horizontal">
-		<legend><strong>Choose mg/dl or mmol:</strong></legend>
-						<input name="tipo_cadastro" type="radio" id="mgdl_form"" onchange="onchange_handler(this, 'mgdl');" onmouseup="onchange_handler(this, 'mgdl');" value="mgdl_form"/>
-						<label for="mgdl_form">mg/dl</label>
-
-						<input type="radio" name="tipo_cadastro" id="mmol_form" value="mmol_form" !important" onchange="onchange_handler(this, 'mmol');" onmouseup="onchange_handler(this, //'mmol');">
-						<label for="mmol_form">mmol</label>
-				</fieldset>
-    
+	
 </div>
     <!-- If MG/DL Form is checked -->
     <div id="mgdl_form_fields">
